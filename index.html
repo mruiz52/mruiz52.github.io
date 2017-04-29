@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+
+<h2>URKEL</h2>
+
+<p id="URKLE"></p>
+</script>
+<script>
+alert("URKLE");
+document.getElementById("URKLE").innerHTML = "URKLE";
+
+</script>
+<button onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button>
+
+<p id="demo"></p>
+<p> time to graduation</p>
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+}
+</style>
+</head>
+<body>
+
+<p id="graduation"></p>
+
+
+
+<style>
+#myContainer {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: white;
+}
+#myAnimation {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: black;
+}
+</style>
+<body>
+
+<p>
+<button onclick="myMove()">Click Me</button> 
+</p>
+
+<div id ="myContainer">
+<div id ="myAnimation"></div>
+</div>
+
+<script>
+function myMove() {
+  var elem = document.getElementById("myAnimation");   
+  var pos = 0;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+  }
+}
+</script>
+<script>
+
+var countDownDate = new Date("May 22, 2017 08:30:00").getTime();
+
+var x = setInterval(function() {
+
+    var now = new Date().getTime();
+    
+    var distance = countDownDate - now;
+    
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("graduation").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("graduation").innerHTML = "Time for a vacation";
+    }
+}, 1000);
+</script>
+
+
+<button onclick="myFunction()">want to feel better?</button>
+
+<p id="goodday"></p>
+
+<script>
+function myFunction() {
+    var hour = new Date().getHours(); 
+    var greeting;
+    if (hour < 12) {
+        greeting = "Good morning";
+    } else {
+        greeting = "Good afternoon";
+    }
+    document.getElementById("goodday").innerHTML = greeting;
+}
+</script>
+
+</html> 
